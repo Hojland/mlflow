@@ -72,6 +72,14 @@ jobs:
           draft: false
           prerelease: false
           body: ${{ steps.changelog.outputs.changelog }}
+  test:
+    runs-on: ubuntu-latest
+    needs: [get-mlflow-versions, tag_and_release]
+    steps:
+      - uses: actions/checkout@v2
+      - name: test
+        run: |
+          echo  ${{ needs.get-mlflow-versions.outputs.mlflow-versions }}
   build_and_push:
     runs-on: ubuntu-latest
     needs: [get-mlflow-versions, tag_and_release]
