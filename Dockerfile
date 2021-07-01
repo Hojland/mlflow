@@ -21,6 +21,8 @@ RUN curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-
 
 COPY pyproject.toml poetry.lock /app/ 
 
+WORKDIR /app
+
 RUN poetry install --no-interaction --no-ansi
 
 RUN poetry add "mlflow=${MLFLOW_VERSION}"
