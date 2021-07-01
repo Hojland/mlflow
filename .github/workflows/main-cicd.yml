@@ -17,7 +17,7 @@ jobs:
     name: get-mlflow-versions
     runs-on: ubuntu-latest
     outputs:
-      mlflow-versions: ${{ steps.mlflow-version.outputs.versions }}
+      mlflow-versions: ${{ steps.modifystring.outputs.stringList }}
     steps:
       - uses: actions/checkout@v2
       - uses: hojland/gha-pypi-versions@v0.0.20
@@ -25,9 +25,11 @@ jobs:
         with:
           pkg_name: mlflow
           latest_num: 5
-      - name: test2
-        run: |
-          echo ${{ steps.mlflow-version.outputs.versions }}
+      - name: String Array to list
+        id: modifystring
+        uses: lucaspinheirogit/list-from-string-array-action@v1.4.3
+        with:
+          stringArray: ${{ steps.mlflow-version.outputs.versions }}
   tag_and_release:
     runs-on: ubuntu-latest
     outputs:
@@ -75,14 +77,6 @@ jobs:
           draft: false
           prerelease: false
           body: ${{ steps.changelog.outputs.changelog }}
-  test:
-    runs-on: ubuntu-latest
-    needs: [get-mlflow-versions, tag_and_release]
-    steps:
-      - uses: actions/checkout@v2
-      - name: test
-        run: |
-          echo  ${{ needs.get-mlflow-versions.outputs.mlflow-versions }}
   build_and_push:
     runs-on: ubuntu-latest
     needs: [get-mlflow-versions, tag_and_release]
