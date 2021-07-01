@@ -2,7 +2,7 @@
 name = "mlflow-docker"
 version = "0.1.0"
 description = "Containerized mlflow"
-authors = ["Martin Hansen <molheh@nuuday.dk>"]
+authors = ["Martin Hansen <hojland93@github.dk>"]
 license = "MIT"
 
 [tool.poetry.dependencies]
