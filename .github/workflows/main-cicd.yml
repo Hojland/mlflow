@@ -20,7 +20,7 @@ jobs:
       mlflow-versions: ${{ steps.mlflow-version.outputs.versions }}
     steps:
       - uses: actions/checkout@v2
-      - uses: hojland/gha-pypi-versions@v0.0.13
+      - uses: hojland/gha-pypi-versions@v0.0.20
         id: mlflow-version
         with:
           pkg_name: mlflow
