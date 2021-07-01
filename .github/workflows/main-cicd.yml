@@ -25,7 +25,8 @@ jobs:
         with:
           pkg_name: mlflow
           latest_num: 5
-      - run: |
+      - name: test2
+        run: |
           echo ${{ steps.mlflow-version.outputs.versions }}
   tag_and_release:
     runs-on: ubuntu-latest
