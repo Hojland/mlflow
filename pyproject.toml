@@ -1,18 +1,17 @@
 [tool.poetry]
 name = "mlflow-docker-mysql"
-version = "0.1.0"
+version = "v0.1.0"
 description = "Containerized mlflow using mysql database backend"
-authors = ["Martin Hansen <hojland93@gmail.com>"]
+authors = [ "Martin Hansen <hojland93@gmail.com>" ]
 license = "MIT"
+dev-dependencies = { }
 
-[tool.poetry.dependencies]
-python = "^3.8"
-boto3 = "^1.17.0"
-mysqlclient = "^2.0.3"
-mlflow = "1.18.0"
-
-[tool.poetry.dev-dependencies]
+  [tool.poetry.dependencies]
+  python = "^3.8"
+  boto3 = "^1.17.0"
+  mysqlclient = "^2.0.3"
+  mlflow = "1.18.0"
 
 [build-system]
-requires = ["poetry-core>=1.0.0"]
+requires = [ "poetry-core>=1.0.0" ]
 build-backend = "poetry.core.masonry.api"
