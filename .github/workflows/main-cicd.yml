@@ -20,7 +20,7 @@ jobs:
       mlflow-versions: ${{ steps.mlflow-version.outputs.versions }}
     steps:
       - uses: actions/checkout@v2
-      - uses: hojland/gha-pypi-versions@v0.0.20
+      - uses: hojland/gha-pypi-versions@v0.1.0
         id: mlflow-version
         with:
           pkg_name: mlflow
@@ -81,12 +81,12 @@ jobs:
           value: ${{ steps.version.outputs.new_tag }}
 
       - name: Commit & Push changes
-      # uses: actions-js/push@v1.2 Waiting for https://github.com/actions-js/push/pull/6 to be merged
-      uses: davidolrik/push@master
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        message: "chore: Bump version in pyproject ${{ needs.tag_and_release.outputs.release_tag }}"
-        branch: master
+        # uses: actions-js/push@v1.2 Waiting for https://github.com/actions-js/push/pull/6 to be merged
+        uses: davidolrik/push@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          message: "chore: Bump version in pyproject ${{ needs.tag_and_release.outputs.release_tag }}"
+          branch: master
   build_and_push:
     runs-on: ubuntu-latest
     needs: [get-mlflow-versions, tag_and_release]
