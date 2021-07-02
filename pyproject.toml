@@ -1,8 +1,8 @@
 [tool.poetry]
-name = "mlflow-docker"
+name = "mlflow-docker-mysql"
 version = "0.1.0"
-description = "Containerized mlflow"
-authors = ["Martin Hansen <hojland93@github.dk>"]
+description = "Containerized mlflow using mysql database backend"
+authors = ["Martin Hansen <hojland93@gmail.com>"]
 license = "MIT"
 
 [tool.poetry.dependencies]
