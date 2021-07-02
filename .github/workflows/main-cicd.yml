@@ -73,20 +73,20 @@ jobs:
           prerelease: false
           body: ${{ steps.changelog.outputs.changelog }}
 
-        - name: Update version in pyproject.toml with release tag
-          uses: ciiiii/toml-editor@1.0.0
-          with:
-            file: "pyproject.toml"
-            key: "tool.poetry.version"
-            value: ${{ steps.version.outputs.new_tag }}
-
-                  - name: Commit & Push changes
-        # uses: actions-js/push@v1.2 Waiting for https://github.com/actions-js/push/pull/6 to be merged
-        uses: davidolrik/push@master
+      - name: Update version in pyproject.toml with release tag
+        uses: ciiiii/toml-editor@1.0.0
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          message: "chore: Bump version in pyproject ${{ needs.tag_and_release.outputs.release_tag }}"
-          branch: master
+          file: "pyproject.toml"
+          key: "tool.poetry.version"
+          value: ${{ steps.version.outputs.new_tag }}
+
+      - name: Commit & Push changes
+      # uses: actions-js/push@v1.2 Waiting for https://github.com/actions-js/push/pull/6 to be merged
+      uses: davidolrik/push@master
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        message: "chore: Bump version in pyproject ${{ needs.tag_and_release.outputs.release_tag }}"
+        branch: master
   build_and_push:
     runs-on: ubuntu-latest
     needs: [get-mlflow-versions, tag_and_release]
