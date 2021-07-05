@@ -1,6 +1,10 @@
 
-<a name="0.1.0"></a>
-## [0.1.0](https://github.com/hojland/mlflow/compare/v0.0.9...0.1.0) (2021-07-02)
+<a name="0.1.1"></a>
+## [0.1.1](https://github.com/hojland/mlflow/compare/v0.1.0...0.1.1) (2021-07-02)
+
+
+<a name="v0.1.0"></a>
+## [v0.1.0](https://github.com/hojland/mlflow/compare/v0.0.9...v0.1.0) (2021-07-02)
 
 ### Bug Fixes
 
