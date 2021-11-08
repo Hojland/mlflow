@@ -1,6 +1,10 @@
 
-<a name="0.1.18"></a>
-## [0.1.18](https://github.com/hojland/mlflow/compare/v0.1.17...0.1.18) (2021-10-25)
+<a name="0.1.19"></a>
+## [0.1.19](https://github.com/hojland/mlflow/compare/v0.1.18...0.1.19) (2021-11-01)
+
+
+<a name="v0.1.18"></a>
+## [v0.1.18](https://github.com/hojland/mlflow/compare/v0.1.17...v0.1.18) (2021-11-01)
 
 
 <a name="v0.1.17"></a>
