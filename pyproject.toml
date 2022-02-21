@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "mlflow-docker-mysql"
-version = "v0.1.32"
+version = "v0.1.33"
 description = "Containerized mlflow using mysql database backend"
 authors = [ "Martin Hansen <hojland93@gmail.com>" ]
 license = "MIT"
